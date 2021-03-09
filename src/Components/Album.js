@@ -3,13 +3,13 @@ import { withRouter } from 'react-router-dom'
 
 class Album extends Component {
   render() {
-    const { coverPhotoBaseUrl, mediaItemsCount, productUrl, title } = this.props.album
-    console.log(coverPhotoBaseUrl)
+    const { coverPhotoBaseUrl, mediaItemsCount, title } = this.props.album
 
     return (
-      <div>
+      <div className="album-cover">
         <img src={coverPhotoBaseUrl} alt={title} title={title}></img>
-        <p>{title}</p>
+        <h4>{title}</h4>
+        <p>{mediaItemsCount} Photos</p>
       </div>
     )
   }

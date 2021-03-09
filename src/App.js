@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import GoogleAuth from './Components/GoogleAuth'
-import PhotoIndex from './Components/PhotoIndex'
+import AlbumIndex from './Components/AlbumIndex'
 import './App.css'
 // import { render } from '@testing-library/react'
 
@@ -32,7 +32,7 @@ class App extends Component {
           </header>
           <main className="App-body">
             <Switch>
-              <Route exact path="/index" render={() => <PhotoIndex token={this.state.token} />} />
+              <Route exact path="/index" render={() => <AlbumIndex token={this.state.token} />} />
             </Switch>
           </main>
         </div>
