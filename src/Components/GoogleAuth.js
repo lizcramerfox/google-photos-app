@@ -53,8 +53,7 @@ class GoogleAuth extends Component {
             onFailure={this.handleLogoutFailure}
             clearToken={this.props.clearToken}
           ></GoogleLogout>
-          <h5>Access Token:</h5> 
-          <p>{this.state.accessToken}</p>
+          <p>TOKEN = {this.state.accessToken}</p>
         </Fragment>
       )
     }
