@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import photoIndex from '../api'
-import Album from './Album'
+import AlbumPreview from './AlbumPreview'
 
 class PhotoIndex extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class PhotoIndex extends Component {
   listAlbums = () => {
     let albums = []
     for (let i = 0; i < this.state.albums.length; i++) {
-      albums.push(<Album album={this.state.albums[i]} id={this.state.albums[i].id} />)
+      albums.push(<AlbumPreview album={this.state.albums[i]} id={this.state.albums[i].id} />)
     }
     return albums
   }
