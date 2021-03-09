@@ -30,11 +30,18 @@ class PhotoIndex extends Component {
   }
   
   render() {
-    console.log(this.state.albums)
+    let indexJsx
+
+    if (!this.state.albums) {
+      indexJsx = <p>Loading albums...</p>
+    } else {
+      indexJsx = this.listAlbums()
+    }
+    
     return (
       <div>
         <h2>Index</h2>
-        <div>{this.listAlbums()}</div>
+        <div>{indexJsx}</div>
       </div>
     )
   }
