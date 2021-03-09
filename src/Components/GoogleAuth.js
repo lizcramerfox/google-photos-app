@@ -43,8 +43,6 @@ class GoogleAuth extends Component {
   render() {
     let authJsx
 
-    console.log(`in Auth, this.props = `, this.props)    
-
     if (this.state.isLoggedIn) {
       authJsx = (
         <Fragment>

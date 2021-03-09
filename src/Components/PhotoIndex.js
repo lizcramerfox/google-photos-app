@@ -7,27 +7,34 @@ class PhotoIndex extends Component {
     super(props)
     
     this.state = {
-      photos: [],
+      albums: [],
     }
   }
 
   componentDidMount() {
     photoIndex(this.props.token)
       .then(res => {
-        console.log(`res = `, res)
-        this.setState({ photos: res })
+        this.setState({ albums: res.data.albums })
       })
       .catch(err => {
         console.log(`err = `, err)
       })
   }
+
+  listAlbums = () => {
+    let titles = []
+    for (let i = 0; i < this.state.albums.length; i++) {
+      titles.push(this.state.albums[i].title)
+    }
+    return <h3>{titles}</h3>
+  }
   
   render() {
-    console.log(this.state)
+    console.log(this.state.albums)
     return (
       <div>
         <h2>Index</h2>
-        <p>{this.state.photos}</p>
+        <div>{this.listAlbums()}</div>
       </div>
     )
   }
