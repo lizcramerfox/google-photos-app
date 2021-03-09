@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import photoIndex from '../api'
+import albumIndex from '../api'
 import AlbumPreview from './AlbumPreview'
 
 class PhotoIndex extends Component {
@@ -13,7 +13,7 @@ class PhotoIndex extends Component {
   }
 
   componentDidMount() {
-    photoIndex(this.props.token)
+    albumIndex(this.props.token)
       .then(res => {
         this.setState({ albums: res.data.albums })
       })
