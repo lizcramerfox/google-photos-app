@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-const albumIndex = token => {
+export const albumIndex = token => {
   return axios({
-    url: 'https://photoslibrary.googleapis.com/v1/albums',
+    url: `https://photoslibrary.googleapis.com/v1/albums`,
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${token}`
@@ -10,6 +10,15 @@ const albumIndex = token => {
   })
 }
 
-export default (
-  albumIndex
-)
+export const albumShow = (token, id) => {
+  return axios({
+    url: `https://photoslibrary.googleapis.com/v1/mediaItems:search`,
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`
+    },
+    data: {
+      'albumId': id
+    }
+  })  
+}

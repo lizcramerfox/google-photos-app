@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 class AlbumPreview extends Component {
   render() {
-    const { coverPhotoBaseUrl, mediaItemsCount, title } = this.props.album
+    const { coverPhotoBaseUrl, mediaItemsCount, title, id } = this.props.album
 
     return (
-      <div className="album-preview">
+      <Link to={`/albums/${id}`} className="album-preview">
         <img src={coverPhotoBaseUrl} alt={title} title={title}></img>
         <h4>{title}</h4>
         <p>{mediaItemsCount} Photos</p>
-      </div>
+      </Link>
     )
   }
 }
