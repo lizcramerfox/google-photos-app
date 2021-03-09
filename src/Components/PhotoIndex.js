@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import photoIndex from '../api'
+import Album from './Album'
 
 class PhotoIndex extends Component {
   constructor(props) {
@@ -22,11 +23,12 @@ class PhotoIndex extends Component {
   }
 
   listAlbums = () => {
-    let titles = []
+    console.log(this.state.albums)
+    let albums = []
     for (let i = 0; i < this.state.albums.length; i++) {
-      titles.push(this.state.albums[i].title)
+      albums.push(<Album album={this.state.albums[i]} id={this.state.albums[i].id} />)
     }
-    return <h3>{titles}</h3>
+    return albums
   }
   
   render() {
@@ -37,7 +39,7 @@ class PhotoIndex extends Component {
     } else {
       indexJsx = this.listAlbums()
     }
-    
+
     return (
       <div>
         <h2>Index</h2>
