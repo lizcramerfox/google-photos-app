@@ -12,6 +12,16 @@ export const albumIndex = token => {
 
 export const albumShow = (token, id) => {
   return axios({
+    url: `https://photoslibrary.googleapis.com/v1/albums/${id}`,
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`
+    },
+  })  
+}
+
+export const albumPhotosShow = (token, id) => {
+  return axios({
     url: `https://photoslibrary.googleapis.com/v1/mediaItems:search`,
     method: 'POST',
     headers: {
