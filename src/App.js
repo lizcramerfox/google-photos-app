@@ -25,12 +25,10 @@ class App extends Component {
           <header className="App-header">
             <h2>Google Photos App</h2>
             <nav>
-              <ul>
-                <Route path="/" render={() => (
-                  <GoogleAuth setToken={this.setToken} clearToken={this.clearToken} token={this.state.token} /> 
-                )}/>
-                <Link to="/index">Index</Link>
-              </ul>
+              <Route path="/" className="nav-element" render={() => (
+                <GoogleAuth setToken={this.setToken} clearToken={this.clearToken} token={this.state.token} /> 
+              )}/>
+              <Link to="/index" className="nav-element">Index</Link>
             </nav>
           </header>
           <main className="App-body">

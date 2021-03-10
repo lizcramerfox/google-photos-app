@@ -1,3 +1,7 @@
+a {
+  color: lightseagreen;
+}
+
 .App {
   text-align: center;
   width: 100vw;
@@ -35,6 +39,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.nav-element {
+  display: block;
+  padding: 1rem;
 }
 
 .album-preview {
