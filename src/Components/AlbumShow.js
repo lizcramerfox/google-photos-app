@@ -24,7 +24,6 @@ class AlbumShow extends Component {
     albumShow(this.props.token, this.props.id)
       .then(res => {
         this.setState({ title: res.data.title })
-        console.log(this.state)
       })
       .catch(err => {
         console.log(`albumShow error = `, err)
@@ -41,7 +40,6 @@ class AlbumShow extends Component {
   }
 
   render() {
-    // console.log(this.state)
     let photosJsx
 
     if (!this.state.photos) {
