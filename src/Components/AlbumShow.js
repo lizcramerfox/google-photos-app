@@ -51,9 +51,11 @@ class AlbumShow extends Component {
     }
 
     return(
-      <div className="album-show">
-        <h3>{this.state.title}</h3>
-        {photosJsx}
+      <div className="wrapper">
+        <h2>{this.state.title}</h2>
+        <div className="album-show">
+          {photosJsx}
+        </div>
       </div>
     )
   }
