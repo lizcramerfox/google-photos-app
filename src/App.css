@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width: 100vw;
 }
 
 .App-logo {
@@ -46,3 +47,14 @@
   display: flex;
   justify-content: center;
 }
+
+.album-show {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+
+.photo {
+  padding: 1rem;
+}
+

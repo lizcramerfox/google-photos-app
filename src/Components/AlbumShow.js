@@ -41,7 +41,7 @@ class AlbumShow extends Component {
     }
 
     return(
-      <div>{photosJsx}</div>
+      <div className="album-show">{photosJsx}</div>
     )
   }
 }
