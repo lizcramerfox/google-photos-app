@@ -25,7 +25,7 @@ class PhotoIndex extends Component {
   listAlbums = () => {
     let albums = []
     for (let i = 0; i < this.state.albums.length; i++) {
-      albums.push(<AlbumPreview album={this.state.albums[i]} id={this.state.albums[i].id} key={this.state.albums[i].id} />)
+      albums.push(<AlbumPreview album={this.state.albums[i]} key={this.state.albums[i].id} id={this.state.albums[i].id} />)
     }
     return albums
   }

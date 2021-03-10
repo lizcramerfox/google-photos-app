@@ -10,15 +10,12 @@ export const albumIndex = token => {
   })
 }
 
-export const albumShow = (token, id) => {
+export const mediaItemsIndex = (token) => {
   return axios({
-    url: `https://photoslibrary.googleapis.com/v1/mediaItems:search`,
-    method: 'POST',
+    url: `https://photoslibrary.googleapis.com/v1/mediaItems/`,
+    method: 'GET',
     headers: {
       'Authorization': `Bearer ${token}`
-    },
-    data: {
-      'albumId': id
     }
   })  
 }

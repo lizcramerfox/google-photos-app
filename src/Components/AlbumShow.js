@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import { albumShow } from '../api'
+import { albumShow, mediaItemsIndex } from '../api'
+import PhotoPreview from './PhotoPreview'
 
 class AlbumShow extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class AlbumShow extends Component {
   }
 
   componentDidMount() {
-    albumShow(this.props.token, this.props.id)
+    // albumShow(this.props.token, this.props.id)
+    mediaItemsIndex(this.props.token)
       .then(res => {
         this.setState({ photos: res.data.mediaItems })
       })
@@ -21,12 +23,25 @@ class AlbumShow extends Component {
       })
   }
 
-  
+  listPhotos = () => {
+    let photos = []
+    for (let i = 0; i < this.state.photos.length; i++) {
+      photos.push(<PhotoPreview photo={this.state.photos[i]} key={this.state.photos[i].id} />)
+    }
+    return photos
+  }
 
   render() {
-    console.log(this.state.photos)
+    let photosJsx
+
+    if (!this.state.photos) {
+      photosJsx = <p>Loading photos...</p>
+    } else {
+      photosJsx = this.listPhotos()
+    }
+
     return(
-      <p>AlbumShow</p>
+      <div>{photosJsx}</div>
     )
   }
 }
